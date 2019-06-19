@@ -19,7 +19,7 @@ def debugEx(name):
 
 @app.route('/puppy_latin/<name>')
 def exercise(name):
-    if (name[-1] != y):
+    if (name[-1] != 'y'):
         name += 'y'
     else:
         name = name[:-1] + 'iful'
