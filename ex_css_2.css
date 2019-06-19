@@ -1,0 +1,17 @@
+/* body{
+  background: gray;
+  background-repeat: no-repeat;
+} */
+
+div{
+  background: gray;
+  /* border: orange;
+  border-width: thick;
+  border-style: solid; */
+  border: orange 10px solid;
+}
+
+span{
+  background: yellow;
+  color: red;
+}
