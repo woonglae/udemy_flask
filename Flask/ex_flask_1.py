@@ -18,4 +18,4 @@ def debugEx(name):
     return "<h1>100th Letter {}</h1>".format(name[100])
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
