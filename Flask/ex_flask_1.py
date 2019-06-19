@@ -17,5 +17,15 @@ def puppy(name):
 def debugEx(name):
     return "<h1>100th Letter {}</h1>".format(name[100])
 
+@app.route('/puppy_latin/<name>')
+def exercise(name):
+    if (name[-1] != y):
+        name += 'y'
+    else:
+        name = name[:-1] + 'iful'
+
+    return name
+
+
 if __name__ == '__main__':
     app.run(debug=True)
