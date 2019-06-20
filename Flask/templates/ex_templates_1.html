@@ -12,7 +12,11 @@
     <img src="../static/img.jpg" alt="WhYYYYY" width="360" height="480">
     <p>Can you read this? then you can understand what I'm saying :)</p>
     <p>{{name}}</p>
-    <p>{{letters[0:3]}}</p>
-    <p>{{dictionary}}</p>
+    <p>{{mylist}}</p>
+    <ul>
+      {% for item in mylist %}
+        <li>{{item}}</li>
+      {% endfor %}
+    </ul>
   </body>
 </html>
