@@ -4,8 +4,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    some_variable = "Ray"
-    return render_template('ex_templates_1.html', my_variable = some_variable)
+    name = "Ray"
+    letters = list(name)
+    dictionary = {"name":'Ray'}
+    return render_template('ex_templates_1.html', name=name, letters=letters, dictionary=dictionary)
 
 if __name__ == '__main__':
     app.run(debug=True)
