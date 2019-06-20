@@ -12,11 +12,17 @@
     <img src="../static/img.jpg" alt="WhYYYYY" width="360" height="480">
     <p>Can you read this? then you can understand what I'm saying :)</p>
     <p>{{name}}</p>
-    <p>{{mylist}}</p>
     <ul>
       {% for item in mylist %}
         <li>{{item}}</li>
       {% endfor %}
     </ul>
+
+    {% if 'Alissa' in mylist %}
+        <h4>Alissa is Love!!</h4>
+    {% endif %}
+
+
+
   </body>
 </html>
