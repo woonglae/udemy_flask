@@ -1,6 +1,19 @@
 {% extends "basic.html" %}
 
 {% block content %}
+<div class="jumbotron">
+  <p>Let's see how you performed!!</p>
 
+  {% if lower and upper and number %}
+    <h1>{{username}}</h1>
+    <p>Congraturation!! Your username is perfect</p>
+  {% endif %}
+
+  {% if lower and upper and not number %}
+      <p>Oh no! Look like you had issues with your username</p>
+  {% endif %}
+
+
+</div>
 
 {% endblock %}
