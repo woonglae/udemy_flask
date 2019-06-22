@@ -12,8 +12,11 @@ def signup_form():
 
 @app.route('/thank_you')
 def thank_you():
-    return render_template('thankyou.html')
+    first = request.args.get('first')
+    last = request.args.get('last')
+    return render_template('thankyou.html', first=first, last=last)
 
 
 
 if __name__ == '__main__':
+    app.run(debug=True)
