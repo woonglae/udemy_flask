@@ -2,17 +2,66 @@
 
 {% block content %}
 <div class="jumbotron">
-  <p>Let's see how you performed!!</p>
 
+  <!-- All good-->
   {% if lower and upper and number %}
+    <p>Let's see how you performed!!</p>
     <h1>{{username}}</h1>
     <p>Congraturation!! Your username is perfect</p>
+  <!-- not number -->
+  {% elif lower and upper and not number %}
+    <p>Let's see how you performed!!</p>
+    <p>Oh no! Look like you had issues with your username</p>
+    <p>Here are the requirements you failed:</p>
+    <ul>
+      <li>You did not end your username with a number.</li>
+    </ul>
+  <!-- not lower-->
+  {% elif not lower and upper and number %}
+    <p>Let's see how you performed!!</p>
+    <p>Oh no! Look like you had issues with your username</p>
+    <p>Here are the requirements you failed:</p>
+    <ul>
+      <li>You did not use an lowercase character.</li>
+    </ul>
+  <!-- not upper-->
+  {% elif lower and not upper and number %}
+    <p>Let's see how you performed!!</p>
+    <p>Oh no! Look like you had issues with your username</p>
+    <p>Here are the requirements you failed:</p>
+    <ul>
+      <li>You did not use an uppercase character.</li>
+    </ul>
+  <!-- only lower -->
+  {% elif lower and not upper and not number %}
+    <p>Let's see how you performed!!</p>
+    <p>Oh no! Look like you had issues with your username</p>
+    <p>Here are the requirements you failed:</p>
+    <ul>
+      <li>You did not use an uppercase character.</li>
+      <li>You did not end your username with a number</li>
+    </ul>
+    <!-- only upper-->
+  {% elif not lower and upper and not number %}
+    <p>Let's see how you performed!!</p>
+    <p>Oh no! Look like you had issues with your username</p>
+    <p>Here are the requirements you failed:</p>
+    <ul>
+      <li>You did not use an lowercase character.</li>
+      <li>You did not end your username with a number</li>
+    </ul>
+  <!-- only number -->
+  {% elif not lower and not upper and number %}
+    <p>Let's see how you performed!!</p>
+    <p>Oh no! Look like you had issues with your username</p>
+    <p>Here are the requirements you failed:</p>
+    <ul>
+      <li>You did not use an lowercase character.</li>
+      <li>You did not use an uppercase character.</li>
+    </ul>
+  {% else %}
+    <p>Please enter only character and number</p>
   {% endif %}
-
-  {% if lower and upper and not number %}
-      <p>Oh no! Look like you had issues with your username</p>
-  {% endif %}
-
 
 </div>
 
