@@ -1,0 +1,33 @@
+{% extends "basic.html" %}
+
+{% block content %}
+<div class="jumbotron">
+
+  <!-- All good-->
+  {% if lower and upper and number %}
+    <p>Let's see how you performed!!</p>
+    <h1>{{username}}</h1>
+    <p>Congraturation!! Your username is perfect</p>
+  <!-- not number -->
+  {% elif not lower or not upper or not number %}
+    <p>Let's see how you performed!!</p>
+    <p>Oh no! Look like you had issues with your username</p>
+    <p>Here are the requirements you failed:</p>
+    <ul>
+    {% if not lower %}
+      <li>You did not use an lowercase character.</li>
+    {% endif %}
+    {% if not upper %}
+      <li>You did not use an uppercase character.</li>
+    {% endif %}
+    {% if not number %}
+      <li>You did not end your username with a number.</li>
+    {% endif %}
+    </ul>
+  {% else %}
+    <p>Please enter only character and number</p>
+  {% endif %}
+
+</div>
+
+{% endblock %}

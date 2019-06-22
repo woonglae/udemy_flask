@@ -29,7 +29,7 @@ def report():
     # https://stackoverflow.com/questions/26515422/how-to-check-if-last-character-is-integer-in-raw-input
 
     # Return the information to the report page html.
-    return render_template('ty.html', username=username, lower=lower, upper=upper, number=number)
+    return render_template('ty1.html', username=username, lower=lower, upper=upper, number=number)
 
 if __name__ == '__main__':
     app.run(debug=True)
