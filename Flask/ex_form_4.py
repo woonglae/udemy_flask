@@ -15,7 +15,7 @@ def index():
     form = SimpleForm()
     if form.validate_on_submit():
         session['breed'] = form.breed.data
-        flash('You just changed your breed to: {}'.format(session['breed']))
+        flash('You just changed your breed to:')
         return redirect(url_for('index'))
     return render_template('ex_form_4.html', form=form)
 
