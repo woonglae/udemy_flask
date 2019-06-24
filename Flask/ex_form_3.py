@@ -30,7 +30,7 @@ def index():
 
     return render_template('ex_form_3.html', form=form)
 
-app.route('/thankyou')
+@app.route('/thankyou')
 def thankyou():
     return render_template('ex_form_3_ty.html')
 
