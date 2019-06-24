@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, url_for, session, flash
+from flask import Flask, request, render_template, url_for, session, flash, redirect
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
