@@ -23,5 +23,5 @@ def index():
 
     return render_template('ex_form_2.html', form=form, breed=breed)
 
-if __name__ = '__main__':
+if __name__ == '__main__':
     app.run(debug=True)
