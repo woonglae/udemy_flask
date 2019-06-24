@@ -19,7 +19,7 @@ def index():
     form = InfoForm()
     if form.validate_on_submit():
         breed = form.breed.data
-        form.breed.data = 'ddd'
+        form.breed.data = ''
 
     return render_template('ex_form_2.html', form=form, breed=breed)
 
