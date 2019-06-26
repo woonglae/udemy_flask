@@ -16,3 +16,19 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir,'dat
 ##app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
+
+
+class Puppy(db.Model):
+    ## MANUAL TABLE NAME CHOICE!
+    __tablename__ = 'puppies'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Colum(db.Text)
+    age = db.Colum(db.Integer)
+
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+
+    def __repr__(self):
+        return "Pupppy {} is {} years old".format(self.name, self.age)
