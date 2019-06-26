@@ -19,3 +19,7 @@ db.session.add_all([sam,frank])
 ## to add them individually
 
 db.session.commit()
+
+
+print(sam.id)
+print(frank.id)
