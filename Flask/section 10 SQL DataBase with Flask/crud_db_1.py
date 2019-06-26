@@ -1,7 +1,7 @@
 from ex_db_1 import db, Puppy
 
 # Creating
-my_puppy = Puppy('Ray', 5)
+my_puppy = Puppy('Alissa', 5)
 db.session.add(my_puppy)
 db.session.commit()
 
@@ -15,7 +15,7 @@ print(puppy_one.name)
 
 # filtering
 # Produce some sql code!!
-puppy_franky = Puppy.query.filter_by(name='Franky')
+puppy_franky = Puppy.query.filter_by(name='Ray')
 print(puppy_franky.all()) # print in __repr__ form
 
 # updating
