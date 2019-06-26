@@ -13,7 +13,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir,'data.sqlite')
 
 ##if you wanna track more detail
-##app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
@@ -23,8 +23,8 @@ class Puppy(db.Model):
     __tablename__ = 'puppies'
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Colum(db.Text)
-    age = db.Colum(db.Integer)
+    name = db.Column(db.Text)
+    age = db.Column(db.Integer)
 
     def __init__(self,name,age):
         self.name = name
