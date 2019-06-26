@@ -23,3 +23,8 @@ first_puppy = Puppy.query.get(1)
 first_puppy.age = 10
 db.session.add(first_puppy)
 db.session.commit()
+
+#deleting
+second_puppy = Puppy.query.get(2)
+db.session.delete(second_puppy)
+db.session.commit()
