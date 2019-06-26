@@ -10,7 +10,6 @@ frank = Puppy('Franky',4)
 print (sam.id)
 print (frank.id)
 
-
 ## Add them all with list
 db.session.add_all([sam,frank])
 
