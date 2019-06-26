@@ -28,3 +28,6 @@ db.session.commit()
 second_puppy = Puppy.query.get(2)
 db.session.delete(second_puppy)
 db.session.commit()
+
+# all_puppies = Puppy.query.all()
+print(all_puppies)
