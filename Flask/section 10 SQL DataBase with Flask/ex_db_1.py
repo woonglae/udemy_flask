@@ -6,6 +6,5 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 ## __file__ --> ex_db_1.py
 ## dirname --> flask_bootcamp/ex_db_1.py
-## abspath --> ~/udemy/flask_bootcamp/ex_db_1.py
-
-print(basedir)
+## abspath --> Users/raycho//udemy/flask_bootcamp/ex_db_1.py
+## ==> basedir = abspath
