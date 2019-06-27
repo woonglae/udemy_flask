@@ -18,6 +18,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
+# connect application with database
+Migrate(app,db)
 
 class Puppy(db.Model):
     ## MANUAL TABLE NAME CHOICE!
