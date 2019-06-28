@@ -27,7 +27,7 @@ class Puppy(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.Text)
-    owner = db.relationship('Owner', backref = 'puppies', uselist=False)
+    owner = db.relationship('Owner', backref = 'puppy', uselist=False)
 
     def __init__(self, name):
         self.name = name
@@ -35,9 +35,9 @@ class Puppy(db.Model):
 
     def __repr__(self):
         if self.owner:
-            return f"Puppy name : {self.name} and owner is {self.owner.name}"
+            return f"Puppy name is {self.name} and owner is {self.owner.name}"
         else:
-            return f"Puppy name : {self.name} and has no owner assigned yet"
+            return f"Puppy name is {self.name} and has no owner assigned yet"
 
 class Owner(db.Model):
     __tablename__ = 'owners'
