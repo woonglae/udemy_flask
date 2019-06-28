@@ -1,12 +1,18 @@
 <!-- add.html -->
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+{% extends "base.html" %}
 
-  </body>
-</html>
+{% block content %}
+<div class="jumbotron">
+  <h1>Have a puppy that needs to be adopted?</h1>
+  <p>Add a new puppy to our database!</p>
+  <form method="POST">
+    {{form.hidden_tag()}}
+    {{form.name.label}}{{form.name()}}
+    {{form.submit()}}
+  </form>
+
+</div>
+
+
+{% endblock %}
