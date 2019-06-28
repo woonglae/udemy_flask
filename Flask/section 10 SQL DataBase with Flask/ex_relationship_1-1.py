@@ -1,6 +1,6 @@
 #Create entries into the tables
 
-from models import db, Puppy, Owner, Toy
+from ex_relationship_1 import db, Puppy, Owner, Toy
 
 # create 2 puppies
 rufus = Puppy('Rufus')
