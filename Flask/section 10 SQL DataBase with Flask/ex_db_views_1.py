@@ -1,7 +1,6 @@
  # addoption_site.py
-
- import os
- # from forms import ADDForm, DelForm
+import os
+from forms import ADDForm, DelForm
 from flask import Flask, render_template, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -34,3 +33,13 @@ class Puppy(db.Model):
 
     def __repr__(self):
         return f"Puppy name : {self.name}"
+
+######## View Function -- Have Forms #############
+
+@app.route('/')
+def index():
+    return render_template('home.html')
+
+@app.route('/add', methods=['GET', 'POST'])
+def add_pup():
+    form = ADDForm()
