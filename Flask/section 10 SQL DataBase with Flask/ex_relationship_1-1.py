@@ -32,4 +32,4 @@ db.session.commit()
 
 rufus = Puppy.query.filter_by(name='Rufus').first()
 print(rufus)
-print(rufus.report_toys())
+rufus.report_toys()
