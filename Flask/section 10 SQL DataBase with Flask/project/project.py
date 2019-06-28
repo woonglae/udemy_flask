@@ -27,13 +27,17 @@ class Puppy(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.Text)
+    owner = db.Column(db.Text)
 
     def __init__(self, name):
         self.name = name
 
 
     def __repr__(self):
-        return f"Puppy name : {self.name}"
+        if self.owner:
+            return f"Puppy name : {self.name} and owner is {self.owner}"
+        else:
+            return f"Puppy name : {self.name} and has no owner assigned yet"
 
 ######## View Function -- Have Forms #############
 
@@ -79,7 +83,7 @@ def add_owner():
     if form.validate_on_submit():
         name = form.name.data
         id = form.id.data
-        
+
 
 
 if __name__ == '__main__':
