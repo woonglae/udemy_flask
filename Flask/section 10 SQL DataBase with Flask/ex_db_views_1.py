@@ -30,6 +30,7 @@ class Puppy(db.Model):
 
     def __init__(self, name):
         self.name = name
+        
 
     def __repr__(self):
         return f"Puppy name : {self.name}"
@@ -60,7 +61,7 @@ def list_pup():
 
 @app.route('/delete', methods=['GET', 'POST'])
 def del_pup():
-    form = DelForm
+    form = DelForm()
 
     if form.validate_on_submit():
         id = form.id.data
