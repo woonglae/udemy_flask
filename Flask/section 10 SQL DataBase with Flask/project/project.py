@@ -1,6 +1,6 @@
  # addoption_site.py
 import os
-from forms import ADDForm, DelForm
+from forms import ADDForm, DelForm, AddOwnerForm
 from flask import Flask, render_template, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -27,7 +27,7 @@ class Puppy(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.Text)
-    owner = db.Column(db.Text)
+    owner = db.relationship('Owner', backref = 'puppies', uselist=False)
 
     def __init__(self, name):
         self.name = name
@@ -35,9 +35,18 @@ class Puppy(db.Model):
 
     def __repr__(self):
         if self.owner:
-            return f"Puppy name : {self.name} and owner is {self.owner}"
+            return f"Puppy name : {self.name} and owner is {self.owner.name}"
         else:
             return f"Puppy name : {self.name} and has no owner assigned yet"
+
+class Owner(db.Model):
+    __tablename__ = 'owners'
+    name = db.Column(db.Text, primary_key=True)
+    pup_id = db.Column(db.Integer, db.ForeignKey('puppies.id'))
+
+    def __init__(self, name, pup_id):
+        self.name = name
+        self.pup_id = pup_id
 
 ######## View Function -- Have Forms #############
 
@@ -83,6 +92,9 @@ def add_owner():
     if form.validate_on_submit():
         name = form.name.data
         id = form.id.data
+        owner = Owner(name, id)
+        db.session.add(owner)
+        db.session.commit()
         return redirect(url_for('list_pup'))
     return render_template('owner.html', form=form)
 
