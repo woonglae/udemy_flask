@@ -84,7 +84,7 @@ def add_owner():
         name = form.name.data
         id = form.id.data
         return redirect(url_for('list_pup'))
-    return render_template('owner.html', form=form)    
+    return render_template('owner.html', form=form)
 
 
 if __name__ == '__main__':
