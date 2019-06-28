@@ -72,5 +72,15 @@ def del_pup():
         return redirect(url_for('list_pup'))
     return render_template('delete.html', form=form)
 
+@app.rout('/addOwner', method=['GET', 'POST'])
+def add_owner():
+    form = AddOwnerForm()
+
+    if form.validate_on_submit():
+        name = form.name.data
+        id = form.id.data
+        
+
+
 if __name__ == '__main__':
     app.run(debug=True)
