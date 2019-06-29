@@ -4,10 +4,10 @@ from myproject import db
 from myproject.models import Owner
 from myproject.owners.forms import AddForm
 
-owners_blueprints = Blueprint('owners', __name__,
+owners_blueprint = Blueprint('owners', __name__,
                                 template_folder='templates/owners')
 
-@owners_blueprints.route('/add', methods=['GET','POST'])
+@owners_blueprint.route('/add', methods=['GET','POST'])
 def add():
     form = AddForm()
 
