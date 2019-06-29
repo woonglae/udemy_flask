@@ -1,6 +1,7 @@
 # Models.py
 # set up db inside __init__.py under myproject folder
 from myproject import db
+
 class Puppy(db.Model):
 
     __tablename__ = 'puppies'
