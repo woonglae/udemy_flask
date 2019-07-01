@@ -13,3 +13,10 @@ def home():
 @login_required
 def welcome_user():
     return render_template('welcome_user.html')
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    flash("You logged out")
+    return redirect(url_for('home'))
