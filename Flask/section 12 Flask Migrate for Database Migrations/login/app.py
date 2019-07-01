@@ -8,3 +8,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 @app.rout('/')
 def home():
     return render_template('home.html')
+
+@app.route('/welcome')
+@login_required
+def welcome_user():
+    return render_template('welcome_user.html')
