@@ -4,8 +4,8 @@ from user import User
 user = [User(1,'Jose','mypassword'),
         User(2,'MiMi', 'secret')]
 
-username_table = {u.username: u for u in users}
-userid_table = {u.id: u for u in users}
+username_table = {u.username: u for u in user}
+userid_table = {u.id: u for u in user}
 
 def authenticate(username, password):
     user = username_table.get(username, None)
