@@ -1,11 +1,11 @@
 from user import User
 
 
-user = [User(1,'Jose','mypassword'),
+users = [User(1,'Jose','mypassword'),
         User(2,'MiMi', 'secret')]
 
-username_table = {u.username: u for u in user}
-userid_table = {u.id: u for u in user}
+username_table = {u.username: u for u in users}
+userid_table = {u.id: u for u in users}
 
 def authenticate(username, password):
     user = username_table.get(username, None)
