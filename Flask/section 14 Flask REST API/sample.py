@@ -22,4 +22,8 @@ class PuppyNames(Resource):
         return pup
 
     def delete(self, name):
-        pass
+        for ind, pup in enumerate(puppies):
+            if pup['name'] == name:
+                deleted_pup = puppies.pop(ind)
+                print(deleted_pup)
+                return {'note':'delete success'}
