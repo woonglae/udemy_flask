@@ -27,3 +27,14 @@ class PuppyNames(Resource):
                 deleted_pup = puppies.pop(ind)
                 print(deleted_pup)
                 return {'note':'delete success'}
+
+class AllNames(Resource):
+    def get(self):
+        return {'puppies':puppies}
+
+
+api.add_resource(PuppyNames,'/puppy/<string:name>')
+api.add_resource(AllNames,'/puppies')
+
+if __name__ == '__main__':
+    app.run(debug=True)
