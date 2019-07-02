@@ -32,7 +32,9 @@ class PuppyNames(Resource):
                 print(deleted_pup)
                 return {'note':'delete success'}
 
+
 class AllNames(Resource):
+    @jwt_required()
     def get(self):
         return {'puppies':puppies}
 
