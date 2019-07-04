@@ -8,7 +8,10 @@ from os
 
 app = Flask(__name__)
 app.config['SECRET_KEY']='mysecretkey'
-basedir = os.path.absp
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///'+os.path.join(basedir,'data.sqlite')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
+
 
 api = Api(app)
 jwt = JWT(app,authenticate, identity)
