@@ -50,11 +50,10 @@ class PuppyNames(Resource):
         return pup.jason()
 
     def delete(self, name):
-        for ind, pup in enumerate(puppies):
-            if pup['name'] == name:
-                deleted_pup = puppies.pop(ind)
-                print(deleted_pup)
-                return {'note':'delete success'}
+        pup = Puppy.query.filter_by(name=name).first()
+        db.session.delete(pup)
+        db.session.commit()
+        return {'note','delete success'}
 
 
 class AllNames(Resource):
