@@ -43,10 +43,11 @@ class PuppyNames(Resource):
 
 
     def post(self, name):
-        pup = {'name':name}
+        pup = Puppy(name=name)
+        db.session.add(pup)
+        db.session.commit()
 
-        puppies.append(pup)
-        return pup
+        return pup.jason()
 
     def delete(self, name):
         for ind, pup in enumerate(puppies):
