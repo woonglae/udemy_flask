@@ -12,19 +12,34 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///'+os.path.join(basedir,'data.sqlite')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 
+db = SQLAlchemy(app)
+Migrate(app,db)
 
 api = Api(app)
 jwt = JWT(app,authenticate, identity)
+
+##########################
+class Puppy(db.Model):
+    name = db.Column(db.String(80),primary_key=True)
+    def __init__(self,name):
+        self.name = name
+
+    def jason(self):
+        return {'name':self.name}
+
+
+###########################
 
 # {'name':"Rufus", .....}
 puppies = []
 
 class PuppyNames(Resource):
     def get(self, name):
-        for pup in puppies:
-            if pup['name']==name:
-                return pup
-        return {'name':None}, 404
+        pup = Puppy.query.filter_by(name=name).first()
+        if pup:
+            return pup.jason()
+        else:
+            return {'name':None}, 404
 
 
     def post(self, name):
