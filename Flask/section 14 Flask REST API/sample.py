@@ -2,6 +2,8 @@ from flask import Flask
 from flask_restful import Resource, Api
 from secure_check import authenticate, identity
 from flask_jwt import JWT, jwt_required
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 app = Flask(__name__)
 app.config['SECRET_KEY']='mysecretkey'
