@@ -27,6 +27,9 @@ class Puppy(db.Model):
     def jason(self):
         return {'name':self.name}
 
+    def __str__(self):
+        return f"{self.name} "
+
 
 ###########################
 
