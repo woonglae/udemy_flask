@@ -4,7 +4,7 @@ from secure_check import authenticate, identity
 from flask_jwt import JWT, jwt_required
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from os
+import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY']='mysecretkey'
