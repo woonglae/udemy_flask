@@ -55,8 +55,8 @@ class PuppyNames(Resource):
     def delete(self, name):
         pup = Puppy.query.filter_by(name=name).first()
         db.session.delete(pup)
-        db.session.commit()
-        return {'note','delete success'}
+        db.session.commit() 
+        return {'note':'delete success'}
 
 
 class AllNames(Resource):
